@@ -49,12 +49,23 @@ const TodoContainer = () => {
     const delTodo = (id) => {
         setTodos( todos.filter(todo => todo.id != id) );
       }
-
+    const setUpdate = (updatedTitle, id) => {
+        setTodos(todos.map(todo => {
+            if (todo.id === id) {
+              todo.title = updatedTitle
+            }
+            return todo
+          })
+        );
+      }
     return (
-            <div>
-            <Header />
-            <InputTodo addTodoProps={addTodoItem}/>
-            <TodoList todos={todos} handleChangeProps={handleChange} deleteTodoProps={delTodo}/>
+            <div className="container">
+                <div className="inner">
+                    <Header />
+                    <InputTodo addTodoProps={addTodoItem}/>
+                    <TodoList todos={todos} handleChangeProps={handleChange} 
+                    deleteTodoProps={delTodo}  setUpdate={setUpdate}/>
+                </div>
             </div>
         );
 

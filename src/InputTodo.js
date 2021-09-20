@@ -13,16 +13,16 @@ const InputTodo = (props) => {
             props.addTodoProps(title);
             setTitle('');
         }else { 
-            alert("Please write item"); 
+            alert("Please write an item"); 
         }
       };
 
     return (
-        <form onSubmit={handleSubmit}>
-        <input type="text" placeholder="Add Todo..." 
-        value={title} name="title" onChange={onChange}/>
-        <button>Submit</button>
-      </form>
+        <form onSubmit={handleSubmit} className="form-container">
+            <input type="text" className="input-text" placeholder="Add Todo..." 
+            value={title} name="title" onChange={onChange}/>
+            <button className="input-submit" >Submit</button>
+        </form>
     )
 
 }
