@@ -8,8 +8,15 @@ import { Route, Switch } from "react-router-dom"
 import Navbar from "./Navbar"
 
 const TodoContainer = () => {
-    const [todos, setTodos] =  useState(
-      JSON.parse(localStorage.getItem('list')) || []
+  console.log('hi');
+  const getList = async () =>  {
+    const response = await fetch("https://jsonplaceholder.typicode.com/todos?_limit=10");
+    const list = await response.json();
+    return list;
+  }
+  
+  const [todos, setTodos] =  useState(
+    JSON.parse(localStorage.getItem('list')) || getList()
     );
     
     const addTodoItem = title => {
@@ -53,12 +60,6 @@ const TodoContainer = () => {
         );
         localStorage.setItem('list', JSON.stringify(todos));
       }
-
-    useEffect(() => {
-        fetch("https://jsonplaceholder.typicode.com/todos?_limit=10")
-        .then(response => response.json())
-        .then(data => setTodos(data));
-      });
 
     return (
         <>
