@@ -7,6 +7,7 @@ const TodoList = (props) => {
   const {
     todos, handleChangeProps, deleteTodoProps, setUpdate,
   } = props;
+  return (
     <ul>
       {todos.map((todo) => (
         <TodoItem
@@ -17,6 +18,7 @@ const TodoList = (props) => {
           setUpdate={setUpdate}
         />
       ))}
-    </ul>;
+    </ul>
+  );
 };
 export default TodoList;
