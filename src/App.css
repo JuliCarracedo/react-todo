@@ -63,6 +63,22 @@
     outline: none;
     border: none;
   }
+  
+  .navBar,
+  .navUl {
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+    list-style: none;
+  }
+
+  a {
+    font-size: 20px;
+    font-weight: 600;
+    width: min-content;
+    margin: 5px 30px 5px 30px;
+  }
+
 
   .active-link {
     color: orangered;
