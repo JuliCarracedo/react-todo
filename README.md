@@ -40,8 +40,6 @@ To get a local copy up and running follow these simple example steps.
 
 - Run ```npm start``` on your editor's integrated command line to open the app on your browser
 
-
-
 ## Author
 
 👤 **Julian Carracedo**

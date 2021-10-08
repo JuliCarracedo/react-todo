@@ -7,6 +7,7 @@ const TodoList = (props) => {
   const {
     todos, handleChangeProps, deleteTodoProps, setUpdate,
   } = props;
+
   return (
     <ul>
       {todos.map((todo) => (
